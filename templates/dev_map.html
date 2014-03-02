@@ -1,0 +1,26 @@
+{% extends 'base_map.html' %}
+
+{% block title %} Map {% endblock %}
+
+{% block content %} 
+  <div class="container">
+  	<div class="row">
+  		<div class="col-lg-6 col-lg-offset-3">
+            <form class="navbar-form form-inline">
+    		      <div>
+	    			 <div id="results-box" style="opacity: 0; height: 2px;overflow: auto;display: none;background: #ffffff">
+	                        <div id="results"></div>
+	                </div>
+		                <div class="input-group">
+		                      <input type="text" placeholder="Enter search query here...e.g Abeka" class="form-control input-medium" id="Site">
+		                      <span class="input-group-btn input-append">
+		                          <input class="btn btn-default" type="button" value="Go!" id="go" />  
+		                      </span>
+		        <!-- button type="submit" class="btn btn-default" onclick="javascript: refresh();" align="center">Clear Results</button -->
+		                </div>
+                    </div> 
+            </form>  
+        </div>
+    </div>     
+</div>
+{% endblock %}

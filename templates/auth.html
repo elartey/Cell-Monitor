@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet" media="screen"> 
+    <style type="text/css">
+    	body {
+    		padding-top: 120px;
+    		padding-bottom: 40px;
+    	}
+    </style>
+    <!-- script src="{{ STATIC_URL }}/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}/bootstrap/js/jquery.min.js"></script -->
+    
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <span class="icon-bar"></span>
+        </div>
+    </div>
+	<div class="container" >
+		<div class="hero-unit">
+		    <h1>Cell Site Monitor</h1>
+            <small>Cell sites that would be monitored by the platform are that of those that are found only in the Accra metropolis and belong to Tigo Ghana</small>
+		</div>
+	<br />
+    <br />
+		<form action="/login/" method="post" class="navbar-form form-inline pull-center">
+		        {% csrf_token %}
+		        {% if next %}
+		        <input type="hidden" name="next" value="{{ next }}" />
+		        {% endif %}
+		        <fieldset>
+		        <legend>User Credentials</legend>
+		        <div align="left"><p class="help-block">{{ state }}</p></div>
+		        <br />
+		        <div class="input-group">
+		        	<label>Username</label>
+		            <input type="text" class="form-control input-small" placeholder="Username" name="username" value="{{ username}}" />
+		        </div>
+		        <br />
+		        <div class="input-group">
+		        	<label>Password</label>
+		            <input type="password" class="form-control input-small" placeholder="Password" name="password" value="" />
+		        </div>
+		        <br />
+		        <button type="submit" class="btn btn-default" align="center">Log In</button>
+		    </fieldset>
+		</form>
+    </div>
+</body>
+</html>
